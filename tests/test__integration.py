@@ -2,7 +2,8 @@ from unittest import TestCase
 
 import os
 
-from marvelator.marvel_api import MarvelAPI
+from marvelator.characters_resource import CharactersResource
+from marvelator.comics_resource import ComicsResource
 
 
 class TestIntegrations(TestCase):
@@ -13,11 +14,15 @@ class TestIntegrations(TestCase):
         self.public_key = os.environ.get('MARVEL_PUB_KEY')
 
     def test_get_comic(self):
-        api = MarvelAPI(public_key=self.public_key, private_key=self.private_key)
-        api.get_comic(10033)
+        comic = ComicsResource(64293).get()
+
+        self.assertIsNotNone(comic)
+
+    def test_get_character(self):
+        char = CharactersResource(1009515).get()
+
+        self.assertIsNotNone(char)
 
     def test_get_comics_of_char(self):
-        api = MarvelAPI(public_key=self.public_key, private_key=self.private_key)
-        result = api.get_character_comics(1009282)
-
-        self.assertGreater(len(result), 1)
+        comics = CharactersResource(1009282).comics()
+        self.assertGreater(len(comics), 1)

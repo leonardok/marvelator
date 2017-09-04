@@ -59,10 +59,10 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'requests==2.18.4', # eg: 'keyword1', 'keyword2', 'keyword3',
+        # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
     install_requires=[
-        # eg: 'aspectlib==1.1.1', 'six>=1.7',
+        'requests==2.18.4', # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
     extras_require={
         # eg:

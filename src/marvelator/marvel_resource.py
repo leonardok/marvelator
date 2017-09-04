@@ -1,7 +1,9 @@
-import abc, six
+import abc
+import six
+
 
 @six.add_metaclass(abc.ABCMeta)
-class MarvelResource():
+class MarvelResource:
     """
     Marvel Abstract Resource
 

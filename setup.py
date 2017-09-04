@@ -72,5 +72,7 @@ setup(
         # eg:
         #   'rst': ['docutils>=0.11'],
         #   ':python_version=="2.6"': ['argparse'],
+
+        'requests': ['requests==2.18.4'],
     },
 )

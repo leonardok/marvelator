@@ -10,8 +10,8 @@ Overview
     * - docs
       - |docs|
     * - tests
-      - | |travis| |appveyor| |requires|
-        | |coveralls| |codecov|
+      - | |travis| |requires|
+        | |codecov|
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
@@ -19,14 +19,10 @@ Overview
 .. |docs| image:: https://readthedocs.org/projects/marvelator/badge/?style=flat
     :target: https://readthedocs.org/projects/marvelator
     :alt: Documentation Status
-
+l
 .. |travis| image:: https://travis-ci.org/leonardok/marvelator.svg?branch=master
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/leonardok/marvelator
-
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/leonardok/marvelator?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/leonardok/marvelator
 
 .. |requires| image:: https://requires.io/github/leonardok/marvelator/requirements.svg?branch=master
     :alt: Requirements Status

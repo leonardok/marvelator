@@ -62,7 +62,7 @@ setup(
         # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
     install_requires=[
-        'requests==2.18.4', # eg: 'aspectlib==1.1.1', 'six>=1.7',
+        'requests==2.18.4', 'six==1.10.0', # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
     extras_require={
         # eg:

@@ -33,8 +33,8 @@ class MarvelCloudResource(MarvelResource):
         self.resource_name = None
         self.resource_id = None
 
-        self.public_key = os.environ.get('MARVEL_PUB_KEY')
-        self.private_key = os.environ.get('MARVEL_PRIV_KEY')
+        self.public_key = os.environ.get('MARVEL_PUB_KEY', '')
+        self.private_key = os.environ.get('MARVEL_PRIV_KEY', '')
 
     def get_from_marvel(self, endpoint, additional_params=None):
         """
@@ -73,9 +73,17 @@ class MarvelCloudResource(MarvelResource):
             logging.warning(str(e.message))
             raise e
 
-        return response.json().get('data').get('results')[0]
+        item = response.json().get('data').get('results')[0]
+        header = {'attributionHTML': response.json().get('attributionHTML'),
+                  'attributionText': response.json().get('attributionText')}
 
-    def comics(self):
+        item_plus_header = {}
+        item_plus_header.update(item)
+        item_plus_header.update(header)
+
+        return item_plus_header
+
+    def comics(self, max_items=1000):
         """
         Get the comics from a resource.
         This method returns a dict vector instead of Comic instances. This is a trade off as
@@ -90,7 +98,7 @@ class MarvelCloudResource(MarvelResource):
         count = 100
         offset = 0
 
-        while count == limit:
+        while count == limit and offset < max_items:
             try:
                 response = self.get_from_marvel(endpoint_specifier, {'limit': limit, 'offset': offset})
                 response.raise_for_status()

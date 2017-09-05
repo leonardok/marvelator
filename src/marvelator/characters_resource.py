@@ -13,6 +13,10 @@ class Character:
         # A list of names and pictures of the characters that features in the story
         self.thumbnail = []
 
+        # header informations
+        self.attributionHTML = None
+        self.attributionText = None
+
     def load_from_dict(self, char_data):
         """
         Load data from dict.
@@ -21,6 +25,10 @@ class Character:
         """
         self.name = char_data.get('name')
         self.thumbnail = char_data.get('thumbnail')
+
+        # header info
+        self.attributionHTML = char_data.get('attributionHTML')
+        self.attributionText = char_data.get('attributionText')
 
         return self
 

@@ -15,14 +15,16 @@ class TestIntegrations(TestCase):
 
     def test_get_comic(self):
         comic = ComicsResource(64293).get()
-
         self.assertIsNotNone(comic)
 
     def test_get_character(self):
         char = CharactersResource(1009515).get()
-
         self.assertIsNotNone(char)
 
     def test_get_comics_of_char(self):
         comics = CharactersResource(1009282).comics()
+        self.assertGreater(len(comics), 1)
+
+    def test_get_subset_comics_of_char(self):
+        comics = CharactersResource(1009282).comics(100)
         self.assertGreater(len(comics), 1)

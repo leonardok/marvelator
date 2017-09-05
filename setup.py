@@ -24,7 +24,7 @@ def read(*names, **kwargs):
 
 setup(
     name='marvelator',
-    version='0.1.0',
+    version='0.1.2',
     license='BSD license',
     description='Python abstraction for developer.marvel.com requests',
     long_description='%s\n%s' % (

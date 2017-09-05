@@ -15,7 +15,7 @@ Overview
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
 
-.. |docs| image:: https://readthedocs.org/projects/marvelator/badge/?style=flat
+.. |docs| image:: https://readthedocs.org/projects/marvelator/badge/?style=flat&version=latest
     :target: https://readthedocs.org/projects/marvelator
     :alt: Documentation Status
 
